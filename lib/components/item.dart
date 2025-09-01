@@ -1,32 +1,33 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-import '../models/number.dart';
+import '../models/item.dart';
 
 class Item extends StatelessWidget {
-  const Item({super.key, required this.number});
+  const Item({super.key, required this.itemModel, required this.color});
 
-  final Number number;
+  final ItemModel itemModel;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 100,
-      color: Color(0xffEF9235),
+      color: color,
       child: Row(
         children: [
-          Container(color: Color(0xffFEF6DB), child: Image.asset(number.image)),
+          Container(color: Color(0xffFEF6DB), child: Image.asset(itemModel.image)),
           Padding(
             padding: const EdgeInsets.only(left: 16.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  number.jpName,
+                  itemModel.jpName,
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
                 Text(
-                  number.enName,
+                  itemModel.enName,
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ],
@@ -36,7 +37,7 @@ class Item extends StatelessWidget {
           IconButton(
             onPressed: () {
               final player = AudioPlayer();
-              player.play(AssetSource(number.sound));
+              player.play(AssetSource(itemModel.sound));
             },
             icon: Icon(Icons.play_arrow, color: Colors.white, size: 32),
           ),
