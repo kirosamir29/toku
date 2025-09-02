@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:toku/components/item.dart';
-
 import '../models/item.dart';
 
 class FamilyMembersPage extends StatelessWidget {
   const FamilyMembersPage({super.key});
 
-  final List<ItemModel> numbers = const [
+  final List<ItemModel> familyMembers = const [
     ItemModel(
       image: "assets/images/family_members/family_father.png",
       jpName: "Chichioya",
@@ -78,9 +77,9 @@ class FamilyMembersPage extends StatelessWidget {
         iconTheme: IconThemeData(color: Colors.white),
       ),
       body: ListView.builder(
-        itemCount: numbers.length,
+        itemCount: familyMembers.length,
         itemBuilder: (context, index) {
-          return Item(color: Color(0xff558B73), itemModel: numbers[index]);
+          return Item(color: Color(0xff558B73), item: familyMembers[index]);
         },
       ),
     );

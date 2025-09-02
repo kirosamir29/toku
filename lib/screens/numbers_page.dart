@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:toku/components/item.dart';
-
 import '../models/item.dart';
 
 class NumbersPage extends StatelessWidget {
@@ -80,7 +79,7 @@ class NumbersPage extends StatelessWidget {
       body: ListView.builder(
         itemCount: numbers.length,
         itemBuilder: (context, index) {
-          return Item(color: Color(0xffEF9235), itemModel: numbers[index]);
+          return Item(color: Color(0xffEF9235), item: numbers[index]);
         },
       ),
     );

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:toku/components/category_item.dart';
+import 'package:toku/screens/colors_page.dart';
 import 'package:toku/screens/family_members_page.dart';
 import 'package:toku/screens/numbers_page.dart';
+import 'package:toku/screens/phrases_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -44,8 +46,34 @@ class HomePage extends StatelessWidget {
               );
             },
           ),
-          Category(text: "Colors", color: Color(0xff79359F)),
-          Category(text: "Phrases", color: Color(0xff50ADC7)),
+          Category(
+            text: "Colors",
+            color: Color(0xff79359F),
+            onTab: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ColorsPage();
+                  },
+                ),
+              );
+            },
+          ),
+          Category(
+            text: "Phrases",
+            color: Color(0xff50ADC7),
+            onTab: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return PhrasesPage();
+                  },
+                ),
+              );
+            },
+          ),
         ],
       ),
     );
